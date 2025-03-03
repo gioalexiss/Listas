@@ -1,0 +1,11 @@
+# Imagen base de Java 17 (ajústala según la versión de tu proyecto)
+FROM amazoncorretto:17-alpine-jdk
+
+# Establece el directorio de trabajo dentro del contenedor
+WORKDIR /app
+
+# Copia el archivo JAR al contenedor (ajusta el nombre si es diferente)
+COPY target/categorias-0.0.1-SNAPSHOT.jar app.jar
+
+# Comando para ejecutar la aplicación
+ENTRYPOINT ["java", "-jar", "/app.jar"]
